@@ -17,16 +17,15 @@ import {
 import { openModal, selectModal } from "../modal/modalSlice";
 
 export function Users() {
-  const [selectedUser, setSelectedUser] = useState();
+  const [selectedUser] = useState();
 
   const allUsers = useSelector(selectUsers);
-  const modalStatus = useSelector(selectModal);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUsersAsync());
-  }, []);
+  }, [dispatch]);
 
   const editUser = (user) => {
     const data = { type: "edit", user: user };

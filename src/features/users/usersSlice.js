@@ -23,6 +23,7 @@ export const deleteUserAsync = createAsyncThunk(
   async (userId) => {
     const userToDelete = apiUrl + "/" + userId;
     const res = await fetch(userToDelete, { method: "DELETE" });
+    console.log(res);
     // here handle the response, instead sending user to filter
     return userId;
   }

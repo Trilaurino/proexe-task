@@ -1,5 +1,4 @@
-import {  useDispatch } from "react-redux";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { closeModal } from "./modalSlice";
 import { addUserAsync } from "../users/usersSlice";
 import { userForm } from "../validateForm/formConfig";
