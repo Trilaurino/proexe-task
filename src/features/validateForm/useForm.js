@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 
 function useForm(formObj) {
   const [form, setForm] = useState(formObj);

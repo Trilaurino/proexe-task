@@ -1,26 +1,23 @@
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { useState } from "react";
 import { closeModal } from "./modalSlice";
 import { addUserAsync } from "../users/usersSlice";
 import { userForm } from "../validateForm/formConfig";
 import useForm from "../validateForm/useForm";
 import {
-  Box,
+
   Button,
   Typography,
-  Modal,
+
   Container,
   Paper,
   Divider,
-  TextField,
+
 } from "@mui/material";
 import { nanoid } from "nanoid";
 
 export const AddPrompt = ({ user }) => {
   const dispatch = useDispatch();
-  const [formData, setFormData] = useState();
-  const [errors, setErrors] = useState();
-  const [validForm, setValidForm] = useState(false);
   const { renderFormInputs, isFormValid } = useForm(userForm);
 
   function submitForm(e) {

@@ -1,11 +1,9 @@
 import React from "react";
 import { TextField, Typography, Container } from "@mui/material";
-import { useSelector } from "react-redux";
 
 import {
   requiredRule,
   minLengthRule,
-  maxLengthRule,
   emailRule,
   nameRegex,
   usernameRegex,

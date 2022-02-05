@@ -1,8 +1,6 @@
 import {
   createSlice,
   createAsyncThunk,
-  createEntityAdapter,
-  current,
 } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -14,7 +12,7 @@ const apiUrl =
 
 export const getUsersAsync = createAsyncThunk(
   "users/getUsers",
-  async (thunkAPI) => {
+  async () => {
     const res = await fetch(apiUrl).then((data) => data.json());
     return res;
   }
@@ -22,7 +20,7 @@ export const getUsersAsync = createAsyncThunk(
 
 export const deleteUserAsync = createAsyncThunk(
   "users/deleteUser",
-  async (userId, thunkAPI) => {
+  async (userId) => {
     const userToDelete = apiUrl + "/" + userId;
     const res = await fetch(userToDelete, { method: "DELETE" });
     // here handle the response, instead sending user to filter
@@ -35,6 +33,7 @@ export const editUserAsync = createAsyncThunk(
   async (updatedFields) => {
     let userToEdit = apiUrl + "/" + updatedFields.id;
     const res = await fetch(userToEdit, { method: "PUT", body: updatedFields });
+    console.log(res);
     const editedRes = {
       id: updatedFields.id,
       name: updatedFields.name,
@@ -54,6 +53,7 @@ export const addUserAsync = createAsyncThunk(
   "users/addUser",
   async (newUser, thunkAPI) => {
     const res = await fetch(apiUrl, { method: "POST" });
+    console.log(res);
     // here handle the response, instead sending user to filter
     return newUser;
   }

@@ -14,7 +14,7 @@ import {
   Container,
   Divider,
 } from "@mui/material";
-import { openModal, closeModal, selectModal } from "../modal/modalSlice";
+import { openModal, selectModal } from "../modal/modalSlice";
 
 export function Users() {
   const [selectedUser, setSelectedUser] = useState();

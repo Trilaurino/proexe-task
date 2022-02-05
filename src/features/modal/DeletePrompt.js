@@ -1,15 +1,15 @@
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { closeModal } from "./modalSlice";
 import { deleteUserAsync } from "../users/usersSlice";
 import {
-  Box,
+
   Button,
   Typography,
-  Modal,
+
   Container,
   Paper,
   Divider,
-  TextField,
+
 } from "@mui/material";
 
 export const DeletePrompt = ({ user }) => {
